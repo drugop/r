@@ -1,5 +1,3 @@
-cat > Dockerfile <<'EOF'
-
 FROM --platform=linux/amd64 alpine:3.19
 RUN apk add --no-cache squid apache2-utils wget curl bash
 
@@ -60,5 +58,3 @@ RUN echo '#!/bin/bash' > /start.sh && \
     chmod +x /start.sh
 
 CMD ["/bin/bash", "/start.sh"]
-
-EOF
