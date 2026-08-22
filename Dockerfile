@@ -1,6 +1,5 @@
 FROM --platform=linux/amd64 alpine:3.19
 RUN apk add --no-cache squid apache2-utils wget curl bash
-
 RUN echo 'http_port 3128' > /etc/squid/squid.conf && \
     echo 'auth_param basic program /usr/lib/squid/basic_ncsa_auth /etc/squid/passwd' >> /etc/squid/squid.conf && \
     echo 'auth_param basic realm proxy' >> /etc/squid/squid.conf && \
