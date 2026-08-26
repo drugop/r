@@ -25,11 +25,11 @@ RUN echo '#!/bin/bash' > /start.sh && \
     echo 'auth.method = "token"' >> /start.sh && \
     echo 'auth.token = "MY_SUPER_TOKEN_123"' >> /start.sh && \
     echo '[[proxies]]' >> /start.sh && \
-    echo 'name = "github-squid-6400-r3"' >> /start.sh && \
+    echo 'name = "github-squid-6102-r3"' >> /start.sh && \
     echo 'type = "tcp"' >> /start.sh && \
     echo 'localIP = "127.0.0.1"' >> /start.sh && \
     echo 'localPort = 3128' >> /start.sh && \
-    echo 'remotePort = 6400' >> /start.sh && \
+    echo 'remotePort = 6102' >> /start.sh && \
     echo 'FRP' >> /start.sh && \
     echo '' >> /start.sh && \
     echo '(while true; do' >> /start.sh && \
