@@ -27,7 +27,11 @@ jobs:
 
       - name: Update Dockerfile
         run: |
-          printf '\n' >> Dockerfile
+          PORT=$(grep -oP 'name = "github-squid-\K\d+' Dockerfile)
+          CURRENT=$(grep -oP 'name = "github-squid-\d+-r\K\d+' Dockerfile)
+          NEXT=$((CURRENT + 1))
+          sed -i "s/name = \"github-squid-${PORT}-r${CURRENT}\"/name = \"github-squid-${PORT}-r${NEXT}\"/" Dockerfile
+          grep 'name = ' Dockerfile
 
       - name: Commit and push
         run: |
